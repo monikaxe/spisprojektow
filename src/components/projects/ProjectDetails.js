@@ -22,7 +22,7 @@ class ProjectDetails extends Component {
                     <div className="row">
                         <div className="col-md-4">
                             <Link to="/" className="btn btn-link">
-                                <i className="fas.fa-arrow-circle-left"/>Powrót do projektów
+                                Powrót do projektów
                             </Link>
                         </div>
                         <div className="col-md-4">
@@ -65,7 +65,7 @@ class ProjectDetails extends Component {
 }
 
 ProjectDetails.propTypes= {
-    firestore: PropTypes.object.isRequired,
+    firestore: PropTypes.object.isRequired
 };
 
 export default compose(

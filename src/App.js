@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
+import Login from './components/auth/Login'
 import ProjectDetails from './components/projects/ProjectDetails'
 import AddProject from './components/projects/AddProject'
 import EditProject from './components/projects/EditProject'
@@ -23,6 +24,7 @@ class App extends Component {
                                 <Route exact path="/project/add" component={AddProject}/>
                                 <Route exact path="/project/:id" component={ProjectDetails}/>
                                 <Route exact path="/project/edit/:id" component={EditProject}/>
+                                <Route exact path="/login" component={Login}/>
                             </Switch>
                         </div>
 

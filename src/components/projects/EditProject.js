@@ -35,7 +35,7 @@ class EditProject extends Component {
                     <div className="row">
                         <div className="col-md-4">
                             <Link to="/" className="btn btn-link">
-                                <i className="fas fa-arrow-circle-left"/>Powrót do projektów
+                                Powrót do projektów
                             </Link>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ class EditProject extends Component {
                                            defaultValue={project.description}
                                     />
                                 </div>
-                                <input type="submit" value="Zapisz" className="btn btn-primary btn-block"/>
+                                <input type="submit" value="Zapisz" className="btn btn-outline-info"/>
                             </form>
                         </div>
                     </div>
@@ -93,7 +93,7 @@ class EditProject extends Component {
 }
 
 EditProject.propTypes= {
-    firestore: PropTypes.object.isRequired,
+    firestore: PropTypes.object.isRequired
 };
 
 export default compose(
