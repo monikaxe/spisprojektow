@@ -20,18 +20,18 @@ class ProjectDetails extends Component {
                     <div className="row">
                         <div className="col-md-4">
                             <Link to="/" className="btn btn-link">
-                                Powrót do projektów
+                                <i className="fas fa-angle-left" />Powrót do projektów
                             </Link>
                         </div>
                         <div className="col-md-4">
                             <div className="btn-group float-right">
                                 <Link to={'/project/edit/${project.id}'} className="btn btn-outline-info">
-                                    Edytuj
+                                    <i className="fas fa-pen" />
                                 </Link>
                             </div>
                             <div className="btn-group float-right">
                                 <button onClick={this.onDeleteClick} className="btn btn-outline-danger">
-                                    Usuń
+                                    <i className="fas fa-trash-alt" />
                                 </button>
                         </div>
                         </div>

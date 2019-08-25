@@ -35,14 +35,14 @@ class EditProject extends Component {
                     <div className="row">
                         <div className="col-md-4">
                             <Link to="/" className="btn btn-link">
-                                Powrót do projektów
+                                <i className="fas fa-angle-left" />Powrót do projektów
                             </Link>
                         </div>
                     </div>
 
                     <div className="card">
                         <div className="card-header">
-                            Edytuj projekt
+                            <i className="fas fa-pen" />
                         </div>
                         <div className="card-body">
                             <form onSubmit={this.onSubmit}>

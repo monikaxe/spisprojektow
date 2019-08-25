@@ -29,7 +29,7 @@ class AddProject extends Component {
                 <div className="row">
                     <div className="col-md-6">
                         <Link to="/" className="btn btn-link">
-                            Powrót do projektów
+                            <i className="fas fa-angle-left" />Powrót do projektów
                         </Link>
                     </div>
                 </div>

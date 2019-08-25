@@ -50,7 +50,7 @@ class Navbar extends Component {
                           {isAuth ? (
                               <li className="nav-item">
                                   <Link to="/" className="nav-link">
-                                      Strona Główna
+                                      <i className="fas fa-home" />
                                   </Link>
                               </li>
                           ) : null}
@@ -60,12 +60,12 @@ class Navbar extends Component {
                          <ul className="navbar-nav ml=auto">
                              <li className="nav-item">
                                 <a href="#!" className="nav-link">
-                                    {auth.email}
+                                    <i className="fas fa-user" />  {auth.email}
                                 </a>
                              </li>
                              <li className="nav-item">
                                  <a href="#!" className="nav-link" onClick={this.onLogoutClick}>
-                                     Logout
+                                     <i className="fas fa-sign-out-alt" />
                                  </a>
                              </li>
                          </ul>
