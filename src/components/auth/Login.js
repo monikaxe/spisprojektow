@@ -31,7 +31,7 @@ class Login extends Component {
                     <div className="card">
                         <div className="card-body">
                             <h1 className="text-center pd-4 pt-3">
-                                <span className="text-primary">
+                                <span className="text-secondary">
                                 Logowanie
                                 </span>
                             </h1>

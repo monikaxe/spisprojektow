@@ -11,19 +11,23 @@ class AddProject extends Component {
         description:''
     };
 
-    onSubmit=(e) => {
+    onSubmit= e => {
         e.preventDefault();
+
         const newProject=this.state;
-        const {firestore}=this.props;
-        firestore.add({collection:'projects'}, newProject).then(()=> this.props.history.push('/'));
+        const {firestore, history}=this.props;
+        firestore
+            .add({collection:'projects'}, newProject)
+            .then(()=> history.push('/'));
     };
 
-    onChange=(e) =>this.setState({[e.target.authors]: e.target.value });
+    onChange= e =>this.setState({[e.target.name]: e.target.value });
+
     render() {
         return (
             <div>
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <Link to="/" className="btn btn-link">
                             Powrót do projektów
                         </Link>
@@ -40,7 +44,7 @@ class AddProject extends Component {
                                 <label htmlFor="authors">Autorzy</label>
                                 <input type="text"
                                        className="form-control"
-                                       authors="authors"
+                                       name="authors"
                                        minLength="2"
                                        required
                                        onChange={this.onChange}
@@ -51,7 +55,7 @@ class AddProject extends Component {
                                 <label htmlFor="title">Tytuł</label>
                                 <input type="text"
                                        className="form-control"
-                                       title="title"
+                                       name="title"
                                        minLength="2"
                                        required
                                        onChange={this.onChange}
@@ -62,7 +66,7 @@ class AddProject extends Component {
                                 <label htmlFor="description">Opis</label>
                                 <input type="text"
                                        className="form-control"
-                                       description="description"
+                                       name="description"
                                        minLength="2"
                                        onChange={this.onChange}
                                        value={this.state.description}

@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {firestoreConnect} from "react-redux-firebase";
 
-
-
 class ProjectDetails extends Component {
         onDeleteClick = () =>{
             const {project, firestore}=this.props;
