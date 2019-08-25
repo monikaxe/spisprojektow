@@ -1,48 +1,60 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import {firestoreConnect, isLoaded, isEmpty} from 'react-redux-firebase';
+
 class Projects extends Component {
     render() {
         const {projects}=this.props;
-            return (
-                <div className="row">
-                    <div className="col-md-6">
-                        <h2>
-                            {' '}
-                        </h2>
-                    </div>
-                    <table className="table table-striped">
-                        <thead className="thread-inverse">
-                            <tr>
-                                <th>Tytuł</th>
-                                <th>Opis</th>
-                                <th>Autor</th>
-                                {/*<th>Kontakt</th>*/}
-                                {/*<th>data rozpoczęcia</th>*/}
-                                {/*<th>data zakończenia</th>*/}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {projects.map(project => (
-                                <tr key={project.id}>
-                                    <td>{project.title}</td>
-                                    <td>{project.description}</td>
-                                    <td>{project.author}</td>
-                                    <td>
-                                        <Link to={`/project/${project.id}`}
-                                              className="btn btn-secondary btn-sm">
-                                        </Link>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+
+        const projectsList = !isLoaded(projects)
+            ? 'Loading'
+            : isEmpty(projects)
+                ? 'Todo list is empty'
+                : projects.map((project) => (
+                    <tr key={project.id}>
+                        <td>{project.title}</td>
+                        <td>{project.description}</td>
+                        <td>{project.authors}</td>
+                        <td>
+                            <Link to={`/project/${project.id}`}
+                                  className="btn btn-secondary btn-sm">
+                                Podgląd
+                            </Link>
+                        </td>
+                    </tr>
+                ));
+
+
+        return (
+            <div className="row">
+                <div className="col-md-6">
+                    <h2>
+                        {' '}
+                    </h2>
                 </div>
-            );
+                <table className="table table-striped">
+                    <thead className="thread-inverse">
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Opis</th>
+                        <th>Autorzy</th>
+                        {/*<th>Kontakt</th>*/}
+                        {/*<th>data rozpoczęcia</th>*/}
+                        {/*<th>data zakończenia</th>*/}
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {projectsList}
+
+                    </tbody>
+                </table>
+            </div>
+        );
     }
 }
 Projects.propTypes={

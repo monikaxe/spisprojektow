@@ -8,7 +8,7 @@ class Navbar extends Component {
           <nav className="navbar navbar-expand-md navbar-dark bg-secondary mb-4">
               <div className="container">
                   <Link to="/" className="navbar-brand">
-                    Tytuł
+                    Spis projektów
                   </Link>
                   <button className="navbar-toggler"
                     type="button"
