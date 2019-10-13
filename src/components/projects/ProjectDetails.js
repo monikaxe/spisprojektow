@@ -25,7 +25,8 @@ class ProjectDetails extends Component {
                         </div>
                         <div className="col-md-4">
                             <div className="btn-group float-right">
-                                <Link to={'/project/edit/${project.id}'} className="btn btn-outline-info">
+
+                                <Link to={`/project/edit/${project.id}`} className="btn btn-outline-info">
                                     <i className="fas fa-pen" />
                                 </Link>
                             </div>
